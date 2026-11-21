@@ -4,24 +4,24 @@
 
 @layer base {
   body {
-    @apply bg-[#090a0f] text-neutral-100 overflow-x-hidden;
+    @apply bg-white text-neutral-900 overflow-x-hidden;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 }
 
-/* Custom scrollbar */
+/* Custom smooth scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #0d0e15;
+  background: #f1f1f4;
 }
 ::-webkit-scrollbar-thumb {
-  background: #27272a;
+  background: #c4c4c8;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #3f3f46;
+  background: #9999a0;
 }
 
 @keyframes marquee {
@@ -32,7 +32,7 @@
 .animate-marquee {
   display: flex;
   width: 200%;
-  animation: marquee 25s linear infinite;
+  animation: marquee 28s linear infinite;
 }
 
 .animate-marquee:hover {

@@ -1,5 +1,6 @@
 export const DEFAULT_BRAND_INFO = {
   name: "CILCK CLOTHING",
+  shortName: "Cilck",
   established: "2024",
   domain: "cilckclothing.com",
   phone: "+91 79776 20643",
@@ -8,304 +9,298 @@ export const DEFAULT_BRAND_INFO = {
   city: "Mumbai",
   state: "Maharashtra",
   pincode: "400022",
-  announcement: "🔥 FREE SHIPPING ALL OVER INDIA ON ORDERS ABOVE ₹999 | MUMBAI STORE & WORKSHOP OPEN",
+  announcement: "Get 10% OFF on All Orders | FREE Shipping | Shop Now!",
   email: "contact@cilckclothing.com",
   timings: "Mon - Sat: 11:00 AM - 9:30 PM | Sun: 12:00 PM - 8:00 PM",
   freeShippingThreshold: 999
 };
 
 export const BRAND_INFO = DEFAULT_BRAND_INFO;
-export const PRODUCTS = INITIAL_PRODUCTS;
-export const CATEGORIES = NAV_CATEGORIES;
 
-// Exact Category Hierarchy of Destiny Clothing
-export const NAV_CATEGORIES = [
+// Top Menu Navigation matching Destiny Clothing Screenshot 1
+export const DESTINY_NAV_LINKS = [
+  { id: "farewell", name: "FAREWELL" },
+  { id: "hoodies-jackets", name: "HOODIES & JACKETS" },
+  { id: "polo-tshirts", name: "POLO T-SHIRTS" },
+  { id: "t-shirts", name: "T-SHIRTS" },
+  { id: "varsity", name: "VARSITY" },
+  { id: "kids-tshirts", name: "KIDS T-SHIRTS" },
+  { id: "accessories", name: "ACCESSORIES" },
+];
+
+export const NAV_CATEGORIES = DESTINY_NAV_LINKS;
+export const CATEGORIES = DESTINY_NAV_LINKS;
+
+// Story Circles Category Bar matching Screenshot 2
+export const CATEGORY_STORIES = [
   {
-    id: "all",
-    name: "All Drops"
+    id: "polo-tshirts",
+    name: "POLO",
+    img: "https://images.unsplash.com/photo-1625910513413-7ec224f8e916?w=300&auto=format&fit=crop&q=80"
+  },
+  {
+    id: "oversized",
+    name: "OVERSIZED",
+    img: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=300&auto=format&fit=crop&q=80"
+  },
+  {
+    id: "hoodies-jackets",
+    name: "HOODIES",
+    img: "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=300&auto=format&fit=crop&q=80"
+  },
+  {
+    id: "zipper",
+    name: "ZIPPER",
+    img: "https://images.unsplash.com/photo-1548883354-7622d03aca27?w=300&auto=format&fit=crop&q=80"
+  },
+  {
+    id: "sweatshirts",
+    name: "SWEATSHIRTS",
+    img: "https://images.unsplash.com/photo-1544441893-675973e31985?w=300&auto=format&fit=crop&q=80"
+  },
+  {
+    id: "varsity",
+    name: "VARSITY",
+    img: "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=300&auto=format&fit=crop&q=80"
   },
   {
     id: "t-shirts",
-    name: "T-Shirts",
-    hasDropdown: true,
-    subcategories: [
-      { id: "round-neck", name: "Round Neck T-Shirts (180 GSM)" },
-      { id: "oversized-tees", name: "Oversized T-Shirts (220-240 GSM)" },
-      { id: "polo-tees", name: "Polo T-Shirts" },
-      { id: "kids-tees", name: "Kids T-Shirts" }
-    ]
-  },
-  {
-    id: "varsity-jackets",
-    name: "Varsity & Jackets",
-    hasDropdown: true,
-    subcategories: [
-      { id: "leather-varsity", name: "Leather Sleeves Varsity (350 GSM)" },
-      { id: "cotton-varsity", name: "Cotton Sleeves Varsity" },
-      { id: "hoodies", name: "Heavyweight Hoodies" },
-      { id: "zipper-jackets", name: "Zipper Hoodies & Jackets" },
-      { id: "sweatshirts", name: "Crewneck Sweatshirts" }
-    ]
-  },
-  {
-    id: "accessories",
-    name: "Accessories",
-    hasDropdown: true,
-    subcategories: [
-      { id: "caps", name: "Embroidered Caps" },
-      { id: "tote-bags", name: "Canvas Tote Bags" }
-    ]
-  },
-  {
-    id: "custom-bulk",
-    name: "Bulk & Corporate",
-    badge: "B2B Quotes"
+    name: "ROUND NECK",
+    img: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?w=300&auto=format&fit=crop&q=80"
   }
 ];
 
+// Brands We Worked With matching Screenshot 2
+export const BRANDS_WORKED_WITH = [
+  { name: "IMS Ghaziabad", label: "IMS GHAZIABAD GROUP" },
+  { name: "Nykaa", label: "NYKAA" },
+  { name: "Crompton", label: "Crompton" },
+  { name: "Apollo Tyres", label: "apollo TYRES" },
+  { name: "Radisson", label: "Radisson MUMBAI GOREGAON" },
+  { name: "Airtel", label: "airtel" }
+];
+
+// Exact Destiny Product Cards matching Screenshot 3
 export const INITIAL_PRODUCTS = [
-  // 1. Oversized T-Shirts
   {
-    id: "clk-001",
-    name: "Heavyweight 240 GSM Oversized Streetwear Tee",
+    id: "dest-001",
+    name: "Customized Round Neck Regular T-Shirt With Your Own Logo/Design",
     category: "t-shirts",
-    subcategory: "oversized-tees",
-    price: 899,
-    originalPrice: 1499,
-    discount: "40% OFF",
+    subHeaderTitle: "ROUND NECK T-SHIRT",
+    fabricPill: "COTTON",
+    packBadge: "Pack Of 2",
+    price: 1299,
+    originalPrice: 1999,
     rating: 4.9,
-    reviewsCount: 168,
+    reviewsCount: 142,
     badge: "Bestseller",
-    gsm: "240 GSM Bio-Washed",
-    fit: "Boxy Drop-Shoulder Relaxed Fit",
-    sizes: ["S", "M", "L", "XL", "XXL"],
-    colors: [
-      { name: "Vintage Onyx", hex: "#18181b" },
-      { name: "Bone White", hex: "#f4f4f5" },
-      { name: "Mocha Brown", hex: "#451a03" }
-    ],
-    images: [
-      "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=800&auto=format&fit=crop&q=80"
-    ],
-    description: "Premium oversized drop-shoulder tee manufactured with 100% super-combed bio-washed single jersey. 240 GSM heavyweight drape with zero color bleeding and ribbed Lycra collar.",
-    features: ["240 GSM 100% Combed Cotton", "Drop-Shoulder Relaxed Fit", "High-Density Puff Print Ready", "Pre-shrunk Fabric Guarantee"],
-    stock: 45
-  },
-  // 2. Round Neck T-Shirt
-  {
-    id: "clk-002",
-    name: "Classic 180 GSM Pure Cotton Round Neck Tee",
-    category: "t-shirts",
-    subcategory: "round-neck",
-    price: 549,
-    originalPrice: 899,
-    discount: "39% OFF",
-    rating: 4.8,
-    reviewsCount: 94,
-    badge: "Daily Essential",
     gsm: "180 GSM Pure Cotton",
-    fit: "Regular Comfort Fit",
-    sizes: ["S", "M", "L", "XL", "XXL"],
+    fit: "Comfort Regular Fit",
+    sizes: ["S", "M", "L", "XL", "2XL"],
     colors: [
-      { name: "Jet Black", hex: "#09090b" },
-      { name: "Pure White", hex: "#ffffff" },
-      { name: "Navy Blue", hex: "#172554" }
+      { name: "Dark Green", hex: "#1c3d2f" },
+      { name: "Black", hex: "#000000" },
+      { name: "Navy Blue", hex: "#0f172a" },
+      { name: "Crimson Red", hex: "#991b1b" }
     ],
+    moreColorsCount: 15,
     images: [
       "https://images.unsplash.com/photo-1581655353564-df123a1eb820?w=800&auto=format&fit=crop&q=80",
       "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=800&auto=format&fit=crop&q=80"
     ],
-    description: "The versatile everyday round neck tee preferred by colleges and corporate teams for custom screen printing and embroidery. Soft hand-feel with breathable weave.",
-    features: ["180 GSM 100% Ring-Spun Cotton", "Reinforced Neckline", "Double Stitched Hem", "Perfect for Screen & DTF Printing"],
+    mockupFrontColor: "#1c3d2f",
+    mockupBackColor: "#1c3d2f",
+    collarZoomColor: "#1c3d2f",
+    description: "Premium customizable 100% bio-washed cotton round neck t-shirts designed for college fests, team gatherings, and corporate client meetings. Includes high-resolution chest and back printing.",
+    stock: 75
+  },
+  {
+    id: "dest-002",
+    name: "Customized Oversized 180 Gsm T-Shirt With Your Own Logo/Design",
+    category: "t-shirts",
+    subHeaderTitle: "OVERSIZED",
+    fabricPill: "180 GSM",
+    packBadge: "Pack Of 2",
+    price: 1399,
+    originalPrice: 2199,
+    rating: 4.8,
+    reviewsCount: 110,
+    badge: "Trending",
+    gsm: "180 GSM Combed Cotton",
+    fit: "Relaxed Drop Shoulder",
+    sizes: ["S", "M", "L", "XL", "2XL"],
+    colors: [
+      { name: "Cream Sand", hex: "#e5d5be" },
+      { name: "Mocha", hex: "#5c3d2e" },
+      { name: "Black", hex: "#171717" },
+      { name: "White", hex: "#f8fafc" }
+    ],
+    moreColorsCount: 8,
+    images: [
+      "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=800&auto=format&fit=crop&q=80"
+    ],
+    mockupFrontColor: "#e5d5be",
+    mockupBackColor: "#e5d5be",
+    collarZoomColor: "#e5d5be",
+    description: "Drop-shoulder relaxed oversized silhouette with front chest badge print and large custom graphic back print.",
     stock: 60
   },
-  // 3. Polo T-Shirt
   {
-    id: "clk-003",
-    name: "Premium Bio-Washed Pique Polo T-Shirt",
-    category: "t-shirts",
-    subcategory: "polo-tees",
-    price: 799,
-    originalPrice: 1299,
-    discount: "38% OFF",
-    rating: 4.8,
-    reviewsCount: 72,
+    id: "dest-003",
+    name: "Customized Polyester Polo Tshirt 200 Gsm With Your Own Logo/Design",
+    category: "polo-tshirts",
+    subHeaderTitle: "POLO T-SHIRT",
+    fabricPill: "POLYESTER",
+    packBadge: "Pack Of 2",
+    price: 1499,
+    originalPrice: 2299,
+    rating: 4.9,
+    reviewsCount: 88,
     badge: "Corporate Pick",
-    gsm: "220 GSM Honeycomb Pique",
-    fit: "Tailored Smart Fit",
-    sizes: ["M", "L", "XL", "XXL"],
+    gsm: "200 GSM Dry-Fit Polyester",
+    fit: "Smart Tailored Collar Fit",
+    sizes: ["S", "M", "L", "XL", "2XL"],
     colors: [
-      { name: "Royal Navy", hex: "#1e3a8a" },
-      { name: "Charcoal Grey", hex: "#374151" },
-      { name: "Burgundy", hex: "#881337" }
+      { name: "Royal Blue", hex: "#1d4ed8" },
+      { name: "Jet Black", hex: "#111827" },
+      { name: "Pure White", hex: "#ffffff" },
+      { name: "Emerald", hex: "#065f46" }
     ],
+    moreColorsCount: 3,
     images: [
       "https://images.unsplash.com/photo-1625910513413-7ec224f8e916?w=800&auto=format&fit=crop&q=80",
       "https://images.unsplash.com/photo-1586363104862-3a5e2ab60d99?w=800&auto=format&fit=crop&q=80"
     ],
-    description: "Refined honeycomb knit pique polo designed for corporate branding, sports teams, and college staff uniforms. Features anti-curling ribbed collar and mother-of-pearl buttons.",
-    features: ["220 GSM Bio-Washed Pique Cotton", "Anti-Roll Flat Knit Collar", "Tipping Stripe Detailing", "Ideal for Chest Logo Embroidery"],
-    stock: 35
+    mockupFrontColor: "#1d4ed8",
+    mockupBackColor: "#1d4ed8",
+    collarZoomColor: "#1d4ed8",
+    description: "Crisp collared polo shirts engineered with breathable moisture-wicking honeycomb pique for employee kits and company offsites.",
+    stock: 40
   },
-  // 4. Leather Sleeves Varsity Jacket (Destiny Signature!)
   {
-    id: "clk-004",
-    name: "Signature Mumbai Varsity Jacket (Faux Leather Sleeves)",
-    category: "varsity-jackets",
-    subcategory: "leather-varsity",
-    price: 2499,
-    originalPrice: 4499,
-    discount: "44% OFF",
+    id: "dest-004",
+    name: "Customized Oversized 220 Gsm T-Shirt With Your Own Logo/Design",
+    category: "t-shirts",
+    subHeaderTitle: "OVERSIZED",
+    fabricPill: "220 GSM",
+    packBadge: "Pack Of 2",
+    price: 1499,
+    originalPrice: 2399,
     rating: 5.0,
-    reviewsCount: 112,
-    badge: "Destiny Style Flagship",
-    gsm: "350 GSM Wool + PU Leather",
-    fit: "Custom Bomber Silhouette",
-    sizes: ["S", "M", "L", "XL", "XXL"],
+    reviewsCount: 95,
+    badge: "Heavy Streetwear",
+    gsm: "220 GSM French Cotton",
+    fit: "Boxy Streetwear Fit",
+    sizes: ["S", "M", "L", "XL", "2XL"],
     colors: [
-      { name: "Obsidian & Off-White", hex: "#18181b" },
-      { name: "Forest Green & Cream", hex: "#14532d" }
+      { name: "Earth Brown", hex: "#78350f" },
+      { name: "Dark Navy", hex: "#1e293b" },
+      { name: "Crimson", hex: "#991b1b" },
+      { name: "Pitch Black", hex: "#000000" }
     ],
+    moreColorsCount: 7,
+    images: [
+      "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=800&auto=format&fit=crop&q=80"
+    ],
+    mockupFrontColor: "#78350f",
+    mockupBackColor: "#78350f",
+    collarZoomColor: "#78350f",
+    description: "Heavyweight 220 GSM boxy tee with high-density puff printing and ribbed neck collar. Built to withstand over 100+ washes.",
+    stock: 55
+  },
+  {
+    id: "dest-005",
+    name: "Customized Varsity Jacket With PU Faux Leather Sleeves (350 GSM)",
+    category: "varsity",
+    subHeaderTitle: "VARSITY JACKET",
+    fabricPill: "MELTON WOOL + LEATHER",
+    packBadge: "Signature",
+    price: 2499,
+    originalPrice: 4299,
+    rating: 5.0,
+    reviewsCount: 164,
+    badge: "Flagship",
+    gsm: "350 GSM Wool Blend",
+    fit: "Bomber Varsity Fit",
+    sizes: ["S", "M", "L", "XL", "2XL"],
+    colors: [
+      { name: "Maroon & White Leather", hex: "#831843" },
+      { name: "Black & Cream Leather", hex: "#18181b" },
+      { name: "Navy & White Leather", hex: "#1e3a8a" }
+    ],
+    moreColorsCount: 4,
     images: [
       "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=800&auto=format&fit=crop&q=80",
       "https://images.unsplash.com/photo-1548883354-7622d03aca27?w=800&auto=format&fit=crop&q=80"
     ],
-    description: "Our signature varsity jacket built in classic collegiate styling. Heavy melton wool torso coupled with premium cruelty-free faux leather sleeves, custom brass snaps, and quilted diamond satin interior lining.",
-    features: ["Heavy Melton Wool Blend Body", "Premium Vegan PU Leather Sleeves", "Chenille & Chainstitch Patch Ready", "Quilted Thermal Satin Lining"],
+    mockupFrontColor: "#831843",
+    mockupBackColor: "#831843",
+    collarZoomColor: "#831843",
+    description: "Destiny-signature classic varsity jacket with heavy melton wool torso and vegan PU leather sleeves with chenille chest lettering.",
     stock: 25
   },
-  // 5. Cotton Sleeves Varsity Jacket
   {
-    id: "clk-005",
-    name: "All-Cotton Fleece College Varsity Jacket",
-    category: "varsity-jackets",
-    subcategory: "cotton-varsity",
+    id: "dest-006",
+    name: "Customized Heavyweight French Terry Hoodie With Your Own Logo",
+    category: "hoodies-jackets",
+    subHeaderTitle: "HOODIES",
+    fabricPill: "380 GSM",
+    packBadge: "Pack Of 2",
     price: 1899,
-    originalPrice: 3199,
-    discount: "40% OFF",
+    originalPrice: 2899,
     rating: 4.9,
-    reviewsCount: 65,
-    badge: "College Fest Favorite",
-    gsm: "350 GSM Heavy French Fleece",
-    fit: "Relaxed Varsity Fit",
-    sizes: ["M", "L", "XL", "XXL"],
-    colors: [
-      { name: "Navy & Grey Heather", hex: "#1e293b" },
-      { name: "Black & White", hex: "#000000" }
-    ],
-    images: [
-      "https://images.unsplash.com/photo-1544441893-675973e31985?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=800&auto=format&fit=crop&q=80"
-    ],
-    description: "Full-fleece varsity jacket providing high breathability and lightweight warmth. Extremely popular for university departments, societies, and fest core committees.",
-    features: ["350 GSM 100% Combed Cotton Fleece", "Striped Rib Knit Collar & Cuffs", "Snap Button Closure", "Front Slit Pockets"],
-    stock: 30
-  },
-  // 6. Heavyweight Streetwear Hoodie
-  {
-    id: "clk-006",
-    name: "Stealth 380 GSM French Terry Pullover Hoodie",
-    category: "varsity-jackets",
-    subcategory: "hoodies",
-    price: 1599,
-    originalPrice: 2699,
-    discount: "41% OFF",
-    rating: 4.9,
-    reviewsCount: 140,
+    reviewsCount: 120,
     badge: "Winter Drop",
-    gsm: "380 GSM Heavy French Terry",
-    fit: "Oversized Boxy Silhouette",
-    sizes: ["S", "M", "L", "XL", "XXL"],
+    gsm: "380 GSM French Terry",
+    fit: "Oversized Pullover",
+    sizes: ["S", "M", "L", "XL", "2XL"],
     colors: [
-      { name: "Pitch Black", hex: "#09090b" },
-      { name: "Dusty Beige", hex: "#d4d4d8" },
-      { name: "Deep Olive", hex: "#365314" }
+      { name: "Matte Black", hex: "#111827" },
+      { name: "Heather Grey", hex: "#9ca3af" },
+      { name: "Maroon", hex: "#881337" }
     ],
+    moreColorsCount: 6,
     images: [
       "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=800&auto=format&fit=crop&q=80",
       "https://images.unsplash.com/photo-1509967419530-da38b4704bc6?w=800&auto=format&fit=crop&q=80"
     ],
-    features: ["380 GSM Brushed Loopback Cotton", "Double-Layered Structured Hood", "Hidden Kangaroo Pockets", "Seamless Streetwear Drapes"],
-    stock: 40
-  },
-  // 7. Zipper Jacket
+    mockupFrontColor: "#111827",
+    mockupBackColor: "#111827",
+    collarZoomColor: "#111827",
+    description: "Thick double-layered hood with seamless kangaroo pocket and soft brushed fleece interior for winter warmth.",
+    stock: 35
+  }
+];
+
+export const PRODUCTS = INITIAL_PRODUCTS;
+
+// Blogs & Insights matching Screenshot 4
+export const BLOGS_POSTS = [
   {
-    id: "clk-007",
-    name: "Urban Heavyweight Full-Zip Streetwear Jacket",
-    category: "varsity-jackets",
-    subcategory: "zipper-jackets",
-    price: 1799,
-    originalPrice: 2999,
-    discount: "40% OFF",
-    rating: 4.8,
-    reviewsCount: 54,
-    badge: "Outerwear",
-    gsm: "350 GSM Pure Cotton",
-    fit: "Regular Zip Fit",
-    sizes: ["M", "L", "XL", "XXL"],
-    colors: [
-      { name: "Gunmetal Grey", hex: "#374151" },
-      { name: "Matte Black", hex: "#111827" }
-    ],
-    images: [
-      "https://images.unsplash.com/photo-1548883354-7622d03aca27?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=800&auto=format&fit=crop&q=80"
-    ],
-    features: ["Heavy Duty YKK Metal Zipper", "Ribbed Hem & Cuffs", "Dual Side Pockets", "Brushed Interior for Warmth"],
-    stock: 22
+    id: "blog-1",
+    title: "Essential Clothing Pieces Every Wardrobe Needs",
+    author: "Akash Kumar",
+    date: "Mar 26, 2026",
+    excerpt: "A well-balanced wardrobe doesn't require excessive options—it starts with a few essential clothing pieces that are versatile, comfortable, and timeless. These staples...",
+    image: "https://images.unsplash.com/photo-1586363104862-3a5e2ab60d99?w=600&auto=format&fit=crop&q=80"
   },
-  // 8. Custom Embroidered Caps
   {
-    id: "clk-008",
-    name: "Cilck 6-Panel Distressed Dad Hat / Cap",
-    category: "accessories",
-    subcategory: "caps",
-    price: 549,
-    originalPrice: 999,
-    discount: "45% OFF",
-    rating: 4.7,
-    reviewsCount: 48,
-    badge: "Accessory",
-    gsm: "100% Chino Twill Cotton",
-    fit: "Adjustable Antique Brass Buckle",
-    sizes: ["Free Size (Adjustable)"],
-    colors: [
-      { name: "Washed Black", hex: "#18181b" },
-      { name: "Desert Khaki", hex: "#d4b996" }
-    ],
-    images: [
-      "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1575428652377-a2d80e2277fc?w=800&auto=format&fit=crop&q=80"
-    ],
-    features: ["Unstructured 6-Panel Low Profile", "Antique Metal Closure", "Pre-curved Visor", "High-Density Embroidery"],
-    stock: 50
+    id: "blog-2",
+    title: "How Modern Technology Powers Apparel Design",
+    author: "Akash Kumar",
+    date: "Mar 26, 2026",
+    excerpt: "In today's fashion industry, printing plays a major role in defining a brand's identity. From bold graphics to minimal logos, the quality...",
+    image: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=600&auto=format&fit=crop&q=80"
   },
-  // 9. Canvas Tote Bag
   {
-    id: "clk-009",
-    name: "Heavyweight 12oz Organic Canvas Tote Bag",
-    category: "accessories",
-    subcategory: "tote-bags",
-    price: 399,
-    originalPrice: 699,
-    discount: "43% OFF",
-    rating: 4.8,
-    reviewsCount: 37,
-    badge: "Eco Merch",
-    gsm: "350 GSM Cotton Duck Canvas",
-    fit: "Spacious Utility Tote (15x16 inch)",
-    sizes: ["One Size"],
-    colors: [
-      { name: "Raw Ecru Natural", hex: "#fef3c7" },
-      { name: "Charcoal Black", hex: "#1f2937" }
-    ],
-    images: [
-      "https://images.unsplash.com/photo-1544816155-12df9643f363?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800&auto=format&fit=crop&q=80"
-    ],
-    features: ["100% Natural Organic Cotton", "Reinforced Cross-Stitch Handles", "Holds up to 15 kg", "Custom Screen Print Ready"],
-    stock: 40
+    id: "blog-3",
+    title: "The Ultimate Hoodie Guide: Style, Comfort & Streetwear Trends",
+    author: "Akash Kumar",
+    date: "Mar 26, 2026",
+    excerpt: "Hoodies have become one of the most essential pieces in modern fashion. Once considered basic sportswear, they are now a key element...",
+    image: "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=600&auto=format&fit=crop&q=80"
   }
 ];
 
@@ -317,10 +312,9 @@ export const INITIAL_ORDERS = [
     customerAddress: "Flat 402, Sea Green Apts, Bandra West, Mumbai 400050",
     date: "2026-11-21",
     items: [
-      { name: "Heavyweight 240 GSM Oversized Streetwear Tee", size: "L", color: "Vintage Onyx", qty: 2, price: 899 },
-      { name: "Signature Mumbai Varsity Jacket (Faux Leather Sleeves)", size: "XL", color: "Obsidian & Off-White", qty: 1, price: 2499 }
+      { name: "Customized Round Neck Regular T-Shirt With Your Own Logo/Design", size: "L", color: "Dark Green", qty: 2, price: 1299 }
     ],
-    total: 4297,
+    total: 2598,
     status: "Confirmed",
     paymentMethod: "WhatsApp Order / UPI"
   },
@@ -331,25 +325,11 @@ export const INITIAL_ORDERS = [
     customerAddress: "Hiranandani Gardens, Powai, Mumbai 400076",
     date: "2026-11-20",
     items: [
-      { name: "Stealth 380 GSM French Terry Pullover Hoodie", size: "M", color: "Pitch Black", qty: 1, price: 1599 },
-      { name: "Cilck 6-Panel Distressed Dad Hat / Cap", size: "Free Size", color: "Washed Black", qty: 1, price: 549 }
+      { name: "Customized Varsity Jacket With PU Faux Leather Sleeves (350 GSM)", size: "M", color: "Maroon & White Leather", qty: 1, price: 2499 }
     ],
-    total: 2148,
+    total: 2499,
     status: "Shipped",
     paymentMethod: "Cash on Delivery (COD)"
-  },
-  {
-    orderId: "CLK-703412",
-    customerName: "Kabir Malhotra",
-    customerPhone: "+91 99304 88123",
-    customerAddress: "Chembur East, Near Diamond Garden, Mumbai 400071",
-    date: "2026-11-19",
-    items: [
-      { name: "Classic 180 GSM Pure Cotton Round Neck Tee", size: "L", color: "Jet Black", qty: 3, price: 549 }
-    ],
-    total: 1647,
-    status: "Delivered",
-    paymentMethod: "Online UPI"
   }
 ];
 
@@ -365,19 +345,6 @@ export const INITIAL_INQUIRIES = [
     budget: "₹1,07,250",
     date: "2026-11-21",
     status: "New Inquiry",
-    notes: "Need navy blue wool varsity jackets with college logo embroidered on chest and organizing committee on back."
-  },
-  {
-    id: "INQ-202",
-    brandOrEvent: "Fintech Startup Onboarding Kits",
-    contactPerson: "Priya Nair",
-    phone: "+91 91672 99881",
-    garmentType: "Oversized Heavyweight Tees",
-    brandingType: "High Density Puff Print",
-    quantity: 120,
-    budget: "₹45,600",
-    date: "2026-11-20",
-    status: "Contacted",
-    notes: "Black oversized 240 GSM tees with minimal puff logo on left pocket area."
+    notes: "Need navy blue wool varsity jackets with college logo embroidered on chest."
   }
 ];
