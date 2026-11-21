@@ -7,7 +7,7 @@ Modern streetwear e-commerce platform & custom merchandising portal built with *
 ## 📍 Client & Brand Profile
 * **Brand Name:** CILCK CLOTHING (ESTD 2024)
 * **Domain:** `cilckclothing.com`
-* **Phone / WhatsApp:** `+91 79776 20643`
+* **Phone / WhatsApp:** `+91 82916 74943`
 * **Address / Workshop:** Cilck clothing, opposite Indian Overseas Bank, GTB Nagar railway station, Mumbai, Maharashtra 400022
 * **Store Timings:** Mon - Sat: 11:00 AM - 9:30 PM | Sun: 12:00 PM - 8:00 PM
 

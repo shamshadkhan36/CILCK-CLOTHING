@@ -26,17 +26,17 @@ export default function App() {
   // Brand metadata
   const [brandInfo, setBrandInfo] = useState(() => {
     try {
-      const saved = localStorage.getItem('cilck_brand_info');
+      const saved = localStorage.getItem('cilck_brand_info_v3');
       return saved ? JSON.parse(saved) : DEFAULT_BRAND_INFO;
     } catch (e) {
       return DEFAULT_BRAND_INFO;
     }
   });
 
-  // Products (editable via Admin)
+  // Products (editable via Admin) - Loaded with full 22-item catalog
   const [products, setProducts] = useState(() => {
     try {
-      const saved = localStorage.getItem('cilck_products');
+      const saved = localStorage.getItem('cilck_products_v3');
       return saved ? JSON.parse(saved) : INITIAL_PRODUCTS;
     } catch (e) {
       return INITIAL_PRODUCTS;
@@ -87,11 +87,11 @@ export default function App() {
 
   // LocalStorage persistence
   useEffect(() => {
-    localStorage.setItem('cilck_brand_info', JSON.stringify(brandInfo));
+    localStorage.setItem('cilck_brand_info_v3', JSON.stringify(brandInfo));
   }, [brandInfo]);
 
   useEffect(() => {
-    localStorage.setItem('cilck_products', JSON.stringify(products));
+    localStorage.setItem('cilck_products_v3', JSON.stringify(products));
   }, [products]);
 
   useEffect(() => {
