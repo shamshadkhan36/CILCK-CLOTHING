@@ -53,6 +53,9 @@ export default function Footer({ onSelectCategory, onOpenTrackOrder }) {
                 <Phone className="w-3.5 h-3.5 text-neutral-400" />
                 <span>{BRAND_INFO.phone}</span>
               </p>
+              <p className="flex items-center gap-1.5 text-neutral-600 font-mono">
+                <span className="font-bold text-neutral-800">GSTIN:</span> {BRAND_INFO.gstNumber}
+              </p>
             </div>
           </div>
 
@@ -189,7 +192,7 @@ export default function Footer({ onSelectCategory, onOpenTrackOrder }) {
 
         {/* Bottom Copyright & Payment Strip matching Screenshot 5 */}
         <div className="mt-12 pt-6 border-t border-neutral-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-500">
-          <p>© 2026 Cilck Clothing | All Rights Reserved</p>
+          <p>© 2026 Cilck Clothing | All Rights Reserved &nbsp;•&nbsp; <span className="font-mono font-medium text-neutral-700">GST: {BRAND_INFO.gstNumber}</span></p>
 
           <div className="flex items-center gap-3">
             <span className="font-bold text-blue-700 bg-neutral-100 px-2 py-0.5 rounded text-[10px]">VISA</span>

@@ -79,9 +79,9 @@ export default function StoreInfo() {
                   <div className="flex items-center gap-3 p-3.5 rounded-xl bg-neutral-950/80 border border-neutral-800">
                     <Globe className="w-4 h-4 text-purple-400 shrink-0" />
                     <div>
-                      <span className="text-[10px] text-neutral-500 block uppercase font-mono">Official Domain</span>
+                      <span className="text-[10px] text-neutral-500 block uppercase font-mono">GST Registration</span>
                       <span className="text-white font-mono font-bold">
-                        {BRAND_INFO.domain}
+                        {BRAND_INFO.gstNumber}
                       </span>
                     </div>
                   </div>
@@ -133,6 +133,7 @@ export default function StoreInfo() {
                 <p>🚇 <strong>Station:</strong> GTB Nagar Railway Station (1 min walk)</p>
                 <p>🏦 <strong>Landmark:</strong> Opposite Indian Overseas Bank</p>
                 <p>📍 <strong>Pincode:</strong> 400022, Mumbai</p>
+                <p>🧾 <strong>GSTIN:</strong> <span className="text-white font-mono">{BRAND_INFO.gstNumber}</span></p>
               </div>
             </div>
 

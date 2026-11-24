@@ -730,6 +730,18 @@ export default function AdminPanel({
 
                 <div>
                   <label className="font-bold text-neutral-300 uppercase tracking-wider block mb-1.5">
+                    GST Number (GSTIN)
+                  </label>
+                  <input
+                    type="text"
+                    value={storeSettings.gstNumber || ''}
+                    onChange={(e) => setStoreSettings({ ...storeSettings, gstNumber: e.target.value })}
+                    className="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-3.5 py-2.5 text-white font-mono uppercase focus:outline-none focus:border-neutral-600"
+                  />
+                </div>
+
+                <div>
+                  <label className="font-bold text-neutral-300 uppercase tracking-wider block mb-1.5">
                     Physical Workshop / Store Address (GTB Nagar)
                   </label>
                   <textarea
