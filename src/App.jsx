@@ -26,7 +26,7 @@ export default function App() {
   // Brand metadata
   const [brandInfo, setBrandInfo] = useState(() => {
     try {
-      const saved = localStorage.getItem('cilck_brand_info_v4');
+      const saved = localStorage.getItem('cilck_brand_info_v5');
       return saved ? JSON.parse(saved) : DEFAULT_BRAND_INFO;
     } catch (e) {
       return DEFAULT_BRAND_INFO;
@@ -87,7 +87,7 @@ export default function App() {
 
   // LocalStorage persistence
   useEffect(() => {
-    localStorage.setItem('cilck_brand_info_v4', JSON.stringify(brandInfo));
+    localStorage.setItem('cilck_brand_info_v5', JSON.stringify(brandInfo));
   }, [brandInfo]);
 
   useEffect(() => {

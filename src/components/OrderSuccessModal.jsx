@@ -68,6 +68,12 @@ export default function OrderSuccessModal({ orderDetails, onClose }) {
             <span className="text-neutral-500">Payment / Method:</span>
             <span className="text-neutral-300 font-medium">{orderDetails.method}</span>
           </div>
+          {orderDetails.paymentId && (
+            <div className="flex justify-between border-b border-neutral-800/80 pb-2">
+              <span className="text-neutral-500">Razorpay ID:</span>
+              <span className="font-mono text-emerald-400 font-bold">{orderDetails.paymentId}</span>
+            </div>
+          )}
           {orderDetails.customerAddress && (
             <div className="pt-1">
               <span className="text-neutral-500 block mb-0.5">Shipping Address:</span>

@@ -742,6 +742,21 @@ export default function AdminPanel({
 
                 <div>
                   <label className="font-bold text-neutral-300 uppercase tracking-wider block mb-1.5">
+                    Razorpay Key ID (Live)
+                  </label>
+                  <input
+                    type="text"
+                    value={storeSettings.razorpayKeyId || ''}
+                    onChange={(e) => setStoreSettings({ ...storeSettings, razorpayKeyId: e.target.value })}
+                    className="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-3.5 py-2.5 text-white font-mono focus:outline-none focus:border-neutral-600"
+                  />
+                  <span className="text-[11px] text-neutral-500 mt-1 block">
+                    Active Live Gateway Key for UPI, Cards & NetBanking payments.
+                  </span>
+                </div>
+
+                <div>
+                  <label className="font-bold text-neutral-300 uppercase tracking-wider block mb-1.5">
                     Physical Workshop / Store Address (GTB Nagar)
                   </label>
                   <textarea

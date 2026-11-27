@@ -69,8 +69,75 @@ export default function CartDrawer({
     onCheckoutSuccess({
       orderId: `CLK-${Math.floor(100000 + Math.random() * 900000)}`,
       total: grandTotal,
+      customerName,
+      customerPhone,
+      customerAddress,
       method: 'WhatsApp Order',
     });
+  };
+
+  const handleRazorpayPayment = () => {
+    if (!customerName || !customerPhone || !customerAddress) {
+      alert('Please fill your Name, WhatsApp/Phone Number, and Delivery Address to proceed.');
+      return;
+    }
+
+    if (typeof window === 'undefined' || !window.Razorpay) {
+      alert('Razorpay Checkout is loading. Please verify internet connection or try again.');
+      return;
+    }
+
+    const options = {
+      key: BRAND_INFO.razorpayKeyId || "rzp_live_U4iKMhDqe9ljrH",
+      amount: Math.round(grandTotal * 100),
+      currency: "INR",
+      name: "CILCK CLOTHING",
+      description: `Payment for ${cartItems.length} items (Order)`,
+      image: "/logo.svg",
+      prefill: {
+        name: customerName,
+        contact: customerPhone.replace(/[^0-9]/g, ''),
+        email: "order@cilckclothing.com"
+      },
+      notes: {
+        address: customerAddress,
+        items: cartItems.map(i => `${i.name} (${i.selectedSize}) x${i.quantity}`).join(', ')
+      },
+      theme: {
+        color: "#5c131d"
+      },
+      handler: function (response) {
+        setIsCheckingOut(false);
+        onCheckoutSuccess({
+          orderId: `CLK-${Math.floor(100000 + Math.random() * 900000)}`,
+          paymentId: response.razorpay_payment_id,
+          total: grandTotal,
+          customerName,
+          customerPhone,
+          customerAddress,
+          method: `Razorpay Online Paid (${response.razorpay_payment_id})`,
+        });
+        onClearCart();
+      },
+      modal: {
+        ondismiss: function () {
+          setIsCheckingOut(false);
+        }
+      }
+    };
+
+    try {
+      const rzp = new window.Razorpay(options);
+      rzp.on('payment.failed', function (resp) {
+        alert(`Payment Failed: ${resp.error.description}`);
+        setIsCheckingOut(false);
+      });
+      setIsCheckingOut(true);
+      rzp.open();
+    } catch (err) {
+      alert('Error initiating Razorpay: ' + err.message);
+      setIsCheckingOut(false);
+    }
   };
 
   const handleDirectCodCheckout = (e) => {
@@ -86,8 +153,9 @@ export default function CartDrawer({
         orderId: `CLK-${Math.floor(100000 + Math.random() * 900000)}`,
         total: grandTotal,
         customerName,
+        customerPhone,
         customerAddress,
-        method: 'Direct COD / Online Order',
+        method: 'Cash on Delivery (COD)',
       });
       onClearCart();
     }, 800);
@@ -296,23 +364,38 @@ export default function CartDrawer({
                 </div>
               </div>
 
-              {/* Action 1: Recommended WhatsApp Checkout */}
+              {/* Action 1: Razorpay Instant Online Payment */}
+              <button
+                onClick={handleRazorpayPayment}
+                disabled={isCheckingOut}
+                className="w-full py-3.5 px-4 bg-[#5c131d] hover:bg-[#4a0f17] text-white rounded-xl font-bold text-xs sm:text-sm tracking-wide transition-all shadow-lg flex items-center justify-center gap-2 group"
+              >
+                <span>💳 Pay Online with Razorpay (UPI, Cards, NetBanking)</span>
+              </button>
+
+              {/* Action 2: WhatsApp Checkout */}
               <button
                 onClick={handleWhatsAppCheckout}
-                className="w-full py-3.5 px-4 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-bold text-xs sm:text-sm tracking-wide transition-all shadow-lg shadow-emerald-950 flex items-center justify-center gap-2"
+                className="w-full py-2.5 px-4 bg-[#25d366] hover:bg-[#20ba5a] text-white rounded-xl font-bold text-xs tracking-wide transition-all shadow-md flex items-center justify-center gap-2"
               >
-                <MessageCircle className="w-4 h-4 fill-white/20" />
+                <MessageCircle className="w-4 h-4 fill-white" />
                 <span>Confirm Order via WhatsApp</span>
               </button>
 
-              {/* Action 2: Direct COD / Standard Order */}
+              {/* Action 3: Direct COD */}
               <button
                 onClick={handleDirectCodCheckout}
                 disabled={isCheckingOut}
-                className="w-full py-2.5 px-4 bg-neutral-900 hover:bg-neutral-800 border border-neutral-700 text-neutral-200 rounded-xl font-semibold text-xs transition-colors flex items-center justify-center gap-2"
+                className="w-full py-2 px-4 bg-neutral-900 hover:bg-neutral-800 border border-neutral-700 text-neutral-300 rounded-xl font-semibold text-xs transition-colors flex items-center justify-center gap-2"
               >
-                <span>{isCheckingOut ? 'Processing Order...' : 'Pay with UPI / Cash on Delivery'}</span>
+                <span>{isCheckingOut ? 'Processing Order...' : 'Pay with Cash on Delivery (COD)'}</span>
               </button>
+
+              <div className="pt-1 text-center">
+                <span className="text-[10px] text-neutral-500 font-mono">
+                  🔒 Secured by Razorpay Live • Instant UPI, Debit/Credit & NetBanking
+                </span>
+              </div>
             </div>
           )}
 

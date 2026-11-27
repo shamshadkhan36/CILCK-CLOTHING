@@ -10,6 +10,7 @@ export const DEFAULT_BRAND_INFO = {
   state: "Maharashtra",
   pincode: "400022",
   gstNumber: "27CWMPG6300H1ZL",
+  razorpayKeyId: "rzp_live_U4iKMhDqe9ljrH",
   announcement: "Get 10% OFF on All Orders | FREE Shipping | Shop Now!",
   email: "contact@cilckclothing.com",
   timings: "Mon - Sat: 11:00 AM - 9:30 PM | Sun: 12:00 PM - 8:00 PM",
